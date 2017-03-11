@@ -25,10 +25,13 @@ $ npm install -save crypton
 Let's start! Include in your node application `crypton` module:
 
 ```javascript
-var Crypton = require('crypton');
+//require object
+var Crypton = require('crypton').Crypton;
+//or require factory
+var crypton = require('crypton');
 
-//create an instance
-var cryptoManager = new Crypton({
+//create options
+var options = {
   crypto: {
     secretKey: 'o!rDE(Qbrq7u4OV',
     algorithm: 'AES-256-CBC',
@@ -38,9 +41,14 @@ var cryptoManager = new Crypton({
   bcrypt: {
     saltRounds: 5
   }
-});
+};
 
-cryptoManager.cipher('mytext')
+//create an instance
+var cryptoManager1 = new Crypton(options);
+//or use factory
+var cryptoManager2 = crypton.create(options);
+
+cryptoManager1.cipher('mytext')
 .then(function(res) {
   console.log(res);
 });
@@ -48,6 +56,15 @@ cryptoManager.cipher('mytext')
 
 # <a name="documentation"></a>Documentation
 # <a name="construction"></a>Construction
+A `Crypton` instance can be created using factory or using the `new` keyword.
+```javascript
+var factory = require('crypton');
+var cryptonManager1 = factory.create();
+//or
+var Crypton = require('crypton').Crypton;
+var cryptonManager2 = new Crypton();
+```
+
 ### <a name="require"/>new Crypton( [options] ) : Object
 The `crypton` module can be initialized with a configuration object.
 

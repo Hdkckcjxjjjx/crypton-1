@@ -2,7 +2,7 @@ var cheerio = require('cheerio')
 var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
-var Crypton = require('../');
+var Crypton = require('../').Crypton;
 var Promise = require('bluebird');
 
 var text = 'example';
