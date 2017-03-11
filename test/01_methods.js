@@ -115,3 +115,19 @@ describe('Call Crypton verify method', function() {
     });
   });
 });
+
+// Random bytes method
+describe('Call Crypton random bytes method', function() {
+  it('should return random bytes', function() {
+    return cryptoManager.randomBytes(20)
+    .then(function(res) {
+      expect(res).to.exist;
+    });
+  });
+  it('should return a RandomBytesCryptonError exception', function() {
+    return cryptoManager.randomBytes(null)
+    .catch(function(err) {
+      expect(err.name).to.be.equal('RandomBytesCryptonError');
+    });
+  });
+});

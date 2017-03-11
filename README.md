@@ -12,6 +12,7 @@ Node module that provides cryptographic functionalities using [`crypto`](https:/
     * [crypt](#crypt)
     * [compare](#compare)
     * [verify](#verify)
+    * [randomBytes](#randomBytes)
 * [License](#license)
 
 # <a name="install"></a>Installation
@@ -209,6 +210,27 @@ __Returns__
 __Throws__
 ```code
 {VerifyCryptonError}
+```
+---------------------------------------
+
+### <a name="randomBytes"/>randomBytes( len ) : Promise( string )
+Get random bytes.
+
+__Arguments__
+
+```code
+len  {int} Bytes legngth
+```
+
+__Returns__
+
+```code
+{string} Returns bytes in hex format
+```
+
+__Throws__
+```code
+{RandomBytesCryptonError}
 ```
 
 # <a name="license"></a>License
