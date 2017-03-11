@@ -47,13 +47,13 @@ cryptoManager.cipher('mytext')
 
 # <a name="documentation"></a>Documentation
 # <a name="construction"></a>Construction
-### <a name="require"/>require('crypton') : Object
+### <a name="require"/>new Crypton( [options] ) : Object
 The `crypton` module can be initialized with a configuration object.
 
 __Arguments__
 
 ```javascript
-[options]    {Object} Optional configuration
+[options] Object} Optional configuration
 ```
 
 __Returns__
