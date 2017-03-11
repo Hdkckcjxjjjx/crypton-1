@@ -53,7 +53,7 @@ The `crypton` module can be initialized with a configuration object.
 __Arguments__
 
 ```javascript
-[options] Object} Optional configuration
+[options] {Object} Optional configuration
 ```
 
 __Returns__
