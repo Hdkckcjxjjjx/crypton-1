@@ -2,7 +2,7 @@ var cheerio = require('cheerio')
 var chai = require('chai');
 var should = chai.should();
 var expect = chai.expect;
-var Crypton = require('../')();
+var Crypton = require('../');
 var Promise = require('bluebird');
 
 var text = 'example';
@@ -20,19 +20,19 @@ var options = {
   }
 };
 
-Crypton.init(options);
+var cryptoManager = new Crypton(options);
 
 // Cipher method
 describe('Call Crypton cipher method', function() {
   it('should return a ciphered text', function() {
-    return Crypton.cipher(text)
+    return cryptoManager.cipher(text)
     .then(function(res) {
       ciphered = res;
       expect(res).to.exist;
     });
   });
   it('should return a CipherCryptonError exception', function() {
-    return Crypton.cipher(null)
+    return cryptoManager.cipher(null)
     .catch(function(err) {
       expect(err.name).to.be.equal('CipherCryptonError');
     });
@@ -42,13 +42,13 @@ describe('Call Crypton cipher method', function() {
 // Decipher method
 describe('Call Crypton decipher method', function() {
   it('should return a deciphered text', function() {
-    return Crypton.decipher(ciphered)
+    return cryptoManager.decipher(ciphered)
     .then(function(res) {
       expect(res).to.be.equal(text);
     });
   });
   it('should return a DecipherCryptonError exception', function() {
-    return Crypton.decipher(null)
+    return cryptoManager.decipher(null)
     .catch(function(err) {
       expect(err.name).to.be.equal('DecipherCryptonError');
     });
@@ -58,19 +58,19 @@ describe('Call Crypton decipher method', function() {
 // Compare method
 describe('Call Crypton compare method', function() {
   it('should return a true value', function() {
-    return Crypton.compare(text, ciphered)
+    return cryptoManager.compare(text, ciphered)
     .then(function(res) {
       expect(res).to.be.equal(true);
     });
   });
   it('should return a false value', function() {
-    return Crypton.compare('fake', ciphered)
+    return cryptoManager.compare('fake', ciphered)
     .then(function(res) {
       expect(res).to.be.equal(false);
     });
   });
   it('should return a CompareCryptonError exception', function() {
-    return Crypton.compare(null, ciphered)
+    return cryptoManager.compare(null, ciphered)
     .catch(function(err) {
       expect(err.name).to.be.equal('CompareCryptonError');
     });
@@ -80,14 +80,14 @@ describe('Call Crypton compare method', function() {
 // Crypt method
 describe('Call Crypton encrypt method', function() {
   it('should return a crypted text', function() {
-    return Crypton.crypt(text)
+    return cryptoManager.crypt(text)
     .then(function(res) {
       crypted = res;
       expect(res).to.exist;
     });
   });
   it('should return a EncryptCryptonError exception', function() {
-    return Crypton.crypt(null)
+    return cryptoManager.crypt(null)
     .catch(function(err) {
       expect(err.name).to.be.equal('EncryptCryptonError');
     });
@@ -97,19 +97,19 @@ describe('Call Crypton encrypt method', function() {
 // Verify method
 describe('Call Crypton verify method', function() {
   it('should return a true value', function() {
-    return Crypton.verify(text, crypted)
+    return cryptoManager.verify(text, crypted)
     .then(function(res) {
       expect(res).to.be.equal(true);
     });
   });
   it('should return a false value', function() {
-    return Crypton.verify('fake', crypted)
+    return cryptoManager.verify('fake', crypted)
     .then(function(res) {
       expect(res).to.be.equal(false);
     });
   });
   it('should return a VerifyCryptonError exception', function() {
-    return Crypton.verify(null, ciphered)
+    return cryptoManager.verify(null, ciphered)
     .catch(function(err) {
       expect(err.name).to.be.equal('VerifyCryptonError');
     });

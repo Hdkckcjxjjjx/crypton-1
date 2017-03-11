@@ -24,7 +24,10 @@ $ npm install -save crypton
 Let's start! Include in your node application `crypton` module:
 
 ```javascript
-var Crypton = require('crypton')({
+var Crypton = require('crypton');
+
+//create an instance
+var cryptoManager = new Crypton({
   crypto: {
     secretKey: 'o!rDE(Qbrq7u4OV',
     algorithm: 'AES-256-CBC',
@@ -36,7 +39,7 @@ var Crypton = require('crypton')({
   }
 });
 
-Crypton.cipher('mytext')
+cryptoManager.cipher('mytext')
 .then(function(res) {
   console.log(res);
 });
@@ -44,7 +47,7 @@ Crypton.cipher('mytext')
 
 # <a name="documentation"></a>Documentation
 # <a name="construction"></a>Construction
-### <a name="require"/>require('crypton')( [options] ) : Object
+### <a name="require"/>require('crypton') : Object
 The `crypton` module can be initialized with a configuration object.
 
 __Arguments__
@@ -56,7 +59,7 @@ __Arguments__
 __Returns__
 
 ```javascript
-{Object} Singleton instance
+{Object} Get an instance
 ```
 
 The configuration object allows you to overrides default values. If you don't specify any configuration, it uses a default object:
