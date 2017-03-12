@@ -214,7 +214,7 @@ Check if the clear text matches with the crypted text. Use this method only with
 __Arguments__
 
 ```code
-text     {string}  Text to compare with ciphered
+text     {string}  Text to compare with crypted
 crypted  {string}  Crypted text
 ```
 
@@ -236,7 +236,7 @@ Get random bytes.
 __Arguments__
 
 ```code
-len  {int} Bytes legngth
+len  {int} Bytes length
 ```
 
 __Returns__
