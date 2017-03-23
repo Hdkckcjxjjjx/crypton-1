@@ -12,7 +12,7 @@ Node module that provides cryptographic functionalities using [`crypto`](https:/
     * [crypt](#crypt)
     * [compare](#compare)
     * [verify](#verify)
-		* [md5](#md5)
+    * [md5](#md5)
     * [randomBytes](#randomBytes)
 * [License](#license)
 
