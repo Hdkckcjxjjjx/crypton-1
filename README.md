@@ -12,6 +12,7 @@ Node module that provides cryptographic functionalities using [`crypto`](https:/
     * [crypt](#crypt)
     * [compare](#compare)
     * [verify](#verify)
+		* [md5](#md5)
     * [randomBytes](#randomBytes)
 * [License](#license)
 
@@ -228,6 +229,28 @@ __Throws__
 ```code
 {VerifyCryptonError}
 ```
+---------------------------------------
+
+### <a name="md5"/>md5( text ) : Promise( string )
+Get md5 hash of a given string.
+
+__Arguments__
+
+```code
+text  {string} Text to hash
+```
+
+__Returns__
+
+```code
+{string} Returns md5sum in hex format
+```
+
+__Throws__
+```code
+{Md5CryptonError}
+```
+
 ---------------------------------------
 
 ### <a name="randomBytes"/>randomBytes( len ) : Promise( string )

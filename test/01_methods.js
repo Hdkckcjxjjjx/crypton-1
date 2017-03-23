@@ -131,3 +131,20 @@ describe('Call Crypton random bytes method', function() {
     });
   });
 });
+
+// Md5 hash method
+describe('Call Crypton md5 method', function() {
+  it('should return md5 hash', function() {
+    return cryptoManager.md5('password')
+    .then(function(res) {
+			console.log(res);
+      expect(res).to.exist;
+    });
+  });
+  it('should return a Md5CryptonError exception', function() {
+    return cryptoManager.md5(null)
+    .catch(function(err) {
+      expect(err.name).to.be.equal('Md5CryptonError');
+    });
+  });
+});
