@@ -137,7 +137,6 @@ describe('Call Crypton md5 method', function() {
   it('should return md5 hash', function() {
     return cryptoManager.md5('password')
     .then(function(res) {
-			console.log(res);
       expect(res).to.exist;
     });
   });
