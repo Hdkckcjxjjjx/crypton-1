@@ -1,4 +1,4 @@
-Crypton
+Crypton 1.x
 ================
 Node module that provides cryptographic functionalities using [`crypto`](https://nodejs.org/api/crypto.html) for ciphering and [`bcrypt`](https://github.com/kelektiv/node.bcrypt.js) for encryption.
 
@@ -29,7 +29,7 @@ Let's start! Include in your node application `crypton` module:
 //require object
 var Crypton = require('crypton').Crypton;
 //or require factory
-var crypton = require('crypton');
+var factory = require('crypton');
 
 //create options
 var options = {
@@ -47,7 +47,7 @@ var options = {
 //create an instance
 var cryptoManager1 = new Crypton(options);
 //or use factory
-var cryptoManager2 = crypton.create(options);
+var cryptoManager2 = factory.create(options);
 
 cryptoManager1.cipher('mytext')
 .then(function(res) {
