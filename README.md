@@ -98,7 +98,7 @@ The configuration object allows you to overrides default values. If you don't sp
 
 ## <a name="methods"></a>Methods
 ### <a name="cipher"/>cipher( text, [options] ) : Promise( string )
-Cipher a text with crypto. The operation is reversible. Options param could the entire crypto configuration or only an attribute:
+Cipher a text with crypto. The operation is reversible. Options param could be the entire crypto configuration or only an attribute:
 ```javascript
 {
   secretKey: 'o!rDE(Qbrq7u4OV'
