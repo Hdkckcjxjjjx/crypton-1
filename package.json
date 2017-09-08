@@ -1,6 +1,6 @@
 {
   "name": "crypton",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Node module that provides cryptographic functionalities",
   "main": "./lib/crypton.js",
   "scripts": {
