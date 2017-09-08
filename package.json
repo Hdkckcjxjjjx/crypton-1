@@ -24,14 +24,13 @@
   },
   "homepage": "https://github.com/thinkingmik/crypton#readme",
   "dependencies": {
-    "bcrypt": "^1.0.2",
+    "bcrypt": "^1.0.3",
     "bluebird": "^3.5.0",
-    "crypto": "^0.0.3",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "cheerio": "^0.22.0",
-    "mocha": "^3.2.0"
+    "chai": "^4.1.2",
+    "cheerio": "^1.0.0-rc.2",
+    "mocha": "^3.5.0"
   }
 }
